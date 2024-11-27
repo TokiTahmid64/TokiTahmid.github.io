@@ -1,14 +1,13 @@
 ---
 layout: post
-title:  "Flexible Techniques for Differentiable Rendering with 3D Gaussians"
-date:   2023-08-28 22:21:59 +00:00
+title:  "BiRNA-BERT allows efficient RNA language modeling with adaptive tokenizationns"
+date:   2024/7/4
 image: /images/3dgaussian.jpg
 categories: research
-author: "Leo Keselman"
-authors: "<strong>Leonid Keselman</strong>, Martial Hebert"
-venue: "arXiv"
-arxiv: https://arxiv.org/abs/2308.14737
-code: https://github.com/leonidk/fmb-plus
-website: https://leonidk.github.io/fmb-plus
+authors: "Md Toki Tahmid, Haz Sameen Shahgir, Sazan Mahbub, Yue Dong, Md Shamsuzzoha Bayzid"
+venue: "NeurIPS 2024 ENLSP Workshop - Oral/Spotlight, NeurIPS 2024 FM4Science Workshop"
+arxiv: https://www.biorxiv.org/content/biorxiv/early/2024/08/26/2024.07.02.601703.full.pdf
+code: https://github.com/buetnlpbio/BiRNA-BERT
+# website: https://leonidk.github.io/fmb-plus
 ---
-We show how shape reconstruction with 3D Gaussians can be expanded to include differentiable optical flow, colored mesh exports and more. 
+BiRNA-BERT is a BERT-style transformer encoder model that generates embeddings for RNA sequences. BiRNA-BERT has been trained on BPE tokens and individual nucleotides. As a result, it can generate both granular nucleotide-level embeddings and efficient sequence-level embeddings (using BPE).
