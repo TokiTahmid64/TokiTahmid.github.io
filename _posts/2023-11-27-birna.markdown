@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "BiRNA-BERT allows efficient RNA language modeling with adaptive tokenizationns"
+date:   2024/7/4
+image: /images/birna.jpg
+categories: research
+authors: "Md Toki Tahmid, Haz Sameen Shahgir, Sazan Mahbub, Yue Dong, Md Shamsuzzoha Bayzid"
+venue: "NeurIPS 2024 ENLSP Workshop - Oral/Spotlight, NeurIPS 2024 FM4Science Workshop"
+arxiv: https://www.biorxiv.org/content/biorxiv/early/2024/08/26/2024.07.02.601703.full.pdf
+code: https://github.com/buetnlpbio/BiRNA-BERT
+# website: https://leonidk.github.io/fmb-plus
+---
