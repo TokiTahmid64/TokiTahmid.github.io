@@ -6,9 +6,8 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E00L9PT3V9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-E00L9PT3V9');
   </script>
   <title>{{ site.name }}</title>
@@ -19,6 +18,17 @@
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <style>
+    .description {
+      display: none;
+    }
+
+    .toggle-button {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
@@ -30,30 +40,9 @@
             <td style="padding:2.5%;width:60%;vertical-align:middle">
               <h1><strong>Md Toki Tahmid</strong></h1>
               <p>Hi, I am Toki. I recently graduated from <a href="https://www.buet.ac.bd/web/#/">Bangladesh University of Engineering and Technology</a>.</p>
-              <p>
-                From 2011 to 2017, I worked at <a href="https://www.intel.com">Intel</a>, as part of <a href="https://www.intelrealsense.com/">Intel RealSense</a>. I primarily designed computer vision algorithms for efficient hardware ASICs, including the Intel RealSense <a href="https://software.intel.com/en-us/articles/realsense-r200-camera">R200</a> and <a href="https://software.intel.com/en-us/realsense/d400">D400</a> RGB-D sensors. Additionally, I worked on <a href="https://github.com/IntelRealSense/librealsense">software APIs</a>, <a href="https://patents.google.com/patent/US9992474B2">active illumination systems</a>, <a href="https://patents.google.com/patent/US9304597">human-computer interaction devices</a>, and helped develop demos for trade shows, including CES 2012-2016.
-              </p>
-              <p>
-                I have an MS in Computer Science (AI focus) from <a href="http://cs.stanford.edu">Stanford University</a>, where I was a research assistant for <a href="http://svl.stanford.edu/">Silvio Savarese</a> and a teaching assistant for <a href="http://svl.stanford.edu/">Fei-Fei Li</a> (<a href="http://vision.stanford.edu/teaching/cs131_fall1617/">CS131</a> & <a href="http://cs231n.stanford.edu/2017/">CS231N</a>). I have a BS in EECS from <a href="http://www.eecs.berkeley.edu/">UC Berkeley</a>, where I worked in <a href="https://people.eecs.berkeley.edu/~pister/">Kris Pister's</a> lab.
-              </p>
-              <p style="text-align:center">
-                <a target="_blank" href="https://mailhide.io/e/B8TyS"> Email</a> &nbsp;/&nbsp;
-                <a href="https://github.com/leonidk">GitHub</a> &nbsp;/&nbsp;
-                <a href="https://scholar.google.com/citations?user=GCYG4GoAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-                <a href="https://www.linkedin.com/in/lkeselman"> LinkedIn </a>
-              </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
               <img style="width:100%;max-width:100%" alt="profile photo" src="images/circle_bw_crop.jpg">
-            </td>
-          </tr>
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Research</h2>
-              <p>I'm interested in computer vision, machine learning, optimization, graphics, and robotics.</p>
             </td>
           </tr>
         </table>
@@ -77,7 +66,7 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{ post.title }}</h3>
               <br>
-              <strong>{{ post.authors }}</strong>
+              <strong>{{ post.authors | replace: 'Md Toki Tahmid', '<strong>Md Toki Tahmid</strong>' }}</strong>
               <br>
               <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
               <br>
@@ -90,8 +79,10 @@
               {% if post.code %}
               <a href="{{ post.code }}">code</a> /
               {% endif %}
-              <p></p>
-              {{ post.excerpt }}
+              <p class="toggle-button" onclick="toggleDescription(this)">Show Description</p>
+              <div class="description">
+                {{ post.excerpt }}
+              </div>
             </td>
           </tr>
           {% endif %}
@@ -117,7 +108,7 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{ post.title }}</h3>
               <br>
-              <strong>{{ post.authors }}</strong>
+              <strong>{{ post.authors | replace: 'Md Toki Tahmid', '<strong>Md Toki Tahmid</strong>' }}</strong>
               <br>
               <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
               <br>
@@ -130,27 +121,31 @@
               {% if post.code %}
               <a href="{{ post.code }}">code</a> /
               {% endif %}
-              <p></p>
-              {{ post.excerpt }}
+              <p class="toggle-button" onclick="toggleDescription(this)">Show Description</p>
+              <div class="description">
+                {{ post.excerpt }}
+              </div>
             </td>
           </tr>
           {% endif %}
           {% endfor %}
         </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
-              </p>
-            </td>
-          </tr>
-        </table>
       </td>
     </tr>
   </table>
+
+  <script>
+    function toggleDescription(element) {
+      const description = element.nextElementSibling;
+      if (description.style.display === "none" || description.style.display === "") {
+        description.style.display = "block";
+        element.innerText = "Hide Description";
+      } else {
+        description.style.display = "none";
+        element.innerText = "Show Description";
+      }
+    }
+  </script>
 </body>
 
 </html>
