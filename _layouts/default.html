@@ -152,6 +152,31 @@
       {% if post.categories contains 'conference' %}
       <tr>
         <!-- Conference content here -->
+        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+          <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+        </td>
+        <td style="padding:2.5%;width:75%;vertical-align:middle">
+          <h3>{{ post.title }}</h3>
+          <br>
+          {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
+          <br>
+          <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+          <br>
+          {% if post.arxiv != "N/A" %}
+          <a href="{{ post.arxiv }}">arxiv</a> /
+          {% endif %}
+          {% if post.doi != "N/A" %}
+          <a href="{{ post.doi }}">doi</a> /
+          {% endif %}
+          {% if post.code != "N/A" %}
+          <a href="{{ post.code }}">code</a> /
+          {% endif %}
+          <br>
+          <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
+          <div class="description">
+            {{ post.excerpt }}
+          </div>
+        </td>
       </tr>
       {% endif %}
       {% endfor %}
@@ -165,6 +190,31 @@
       {% if post.categories contains 'preprints' %}
       <tr>
         <!-- Preprint content here -->
+        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+          <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+        </td>
+        <td style="padding:2.5%;width:75%;vertical-align:middle">
+          <h3>{{ post.title }}</h3>
+          <br>
+          {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
+          <br>
+          <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+          <br>
+          {% if post.arxiv != "N/A" %}
+          <a href="{{ post.arxiv }}">arxiv</a> /
+          {% endif %}
+          {% if post.doi != "N/A" %}
+          <a href="{{ post.doi }}">doi</a> /
+          {% endif %}
+          {% if post.code != "N/A" %}
+          <a href="{{ post.code }}">code</a> /
+          {% endif %}
+          <br>
+          <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
+          <div class="description">
+            {{ post.excerpt }}
+          </div>
+        </td>
       </tr>
       {% endif %}
       {% endfor %}
