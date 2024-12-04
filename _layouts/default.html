@@ -80,7 +80,7 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{ post.title }}</h3>
               <br>
-              <strong>{{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}</strong>
+              {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
               <br>
               <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
               <br>
@@ -93,6 +93,7 @@
               {% if post.code != "N/A" %}
               <a href="{{ post.code }}">code</a> /
               {% endif %}
+              <br
               <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
               <div class="description">
                 {{ post.excerpt }}
