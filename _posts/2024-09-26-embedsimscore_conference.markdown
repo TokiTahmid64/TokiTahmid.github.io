@@ -2,7 +2,7 @@
 layout: post
 title:  "EmbedSimScore: Advancing Protein Similarity Analysis with Structural and Contextual Embeddings"
 date:   2024/09/26
-image: /images/embedsimscore.jpg
+image: ../images/c_embed.png
 categories: conference
 authors: "Gourab Saha*, Md Toki Tahmid*, Md. Shamsuzzoha Bayzid (*Equal Contribution)"
 venue: "NeurIPS 2024 SSL Workshop (Self-Supervised Learning - Theory and Practice)"

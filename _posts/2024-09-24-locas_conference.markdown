@@ -2,7 +2,7 @@
 layout: post
 title:  "LOCAS: Multi-label mRNA Localization with Supervised Contrastive Learning"
 date:   2024/09/24
-image: /images/locas.jpg
+image: ../images/c_locas.png
 categories: conference
 authors: "Abrar Rahman Abir*, Md Toki Tahmid*, M. Saifur Rahman (*Equal Contribution)"
 venue: "NeurIPS 2024 MLSB Workshop"

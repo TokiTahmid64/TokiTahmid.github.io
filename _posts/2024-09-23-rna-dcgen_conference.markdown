@@ -2,7 +2,7 @@
 layout: post
 title:  "RNA-DCGen: Dual Constrained RNA Sequence Generation with LLM-Attack"
 date:   2024/09/23
-image: /images/rna-dcgen.jpg
+image: ../images/c_dcgen.png
 categories: conference
 authors: "Haz Sameen Shahgir*, Md. Rownok Zahan Ratul*, Md Toki Tahmid*, Khondker Salman Sayeed, Atif Rahman (*Equal Contribution)"
 venue: "NeurIPS 2024 MLSB Workshop"

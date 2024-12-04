@@ -2,7 +2,7 @@
 layout: post
 title:  "TomoPicker: Annotation-Efficient Particle Picking in Cryo-Electron Tomograms"
 date:   2024/11/04
-image: /images/tomopicker.jpg
+image: ../images/c_tomo.png
 categories: conference
 authors: "Mostofa Rafid Uddin, Ajmain Yasar Ahmed, Md Toki Tahmid, Md. Zarif Ul Alam, Zachary Freyberg, Min Xu"
 venue: "NeurIPS 2024 MLSB Workshop"

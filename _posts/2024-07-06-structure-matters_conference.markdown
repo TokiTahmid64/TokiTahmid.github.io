@@ -2,7 +2,7 @@
 layout: post
 title:  "Structure Matters: Deciphering Neural Network’s Properties from its Structure"
 date:   2024/07/06
-image: /images/structure-matters.jpg
+image: ../images/c_struct.png
 categories: conference
 authors: "Shashata Sawmya*, Md Toki Tahmid*, Gourab Saha*, Arpita Saha, Nir N. Shavit, Lu Mi (*Equal Contribution)"
 venue: "NeurIPS 2024 Symmetry and Geometry in Neural Representations Workshop"

@@ -2,7 +2,7 @@
 layout: post
 title:  "BiRNA-BERT: Adaptive Tokenization for Efficient RNA Language Modeling"
 date:   2024/07/04
-image: /images/birna.jpg
+image: ../images/c_birna.png
 categories: conference
 authors: "Md Toki Tahmid, Haz Sameen Shahgir, Sazan Mahbub, Yue Dong, Md Shamsuzzoha Bayzid"
 venue: "NeurIPS 2024 ENLSP Workshop, Oral/Spotlight"
