@@ -90,149 +90,152 @@
 </head>
 
 <body>
-  <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px; margin-bottom: 20px;">
-    <h1 style="font-size: 2.5em; color: #004080; margin-bottom: 10px;"><strong>Md Toki Tahmid</strong></h1>
-    <p style="font-size: 1.2em; color: #555; line-height: 1.6;">
-      Welcome! I am a recent graduate from the <a href="https://www.buet.ac.bd/web/#/" style="color: #007BFF; text-decoration: none;"><strong>Department of Computer Science and Engineering</strong></a> at the <strong>Bangladesh University of Engineering and Technology (BUET)</strong>.
-      My passion lies in leveraging computational techniques to address challenges in <strong>biomedical informatics</strong>, <strong>clinical health</strong>, <strong>precision medicine</strong>, and <strong>computational biology</strong>.
-    </p>
-  </div>
-  
-  <!-- Profile Photo -->
-  <div style="text-align: center; margin-bottom: 30px;">
-    <img style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #004080;" alt="profile photo" src="../images/Md_Toki_Tahmid_Photo.jpg">
-  </div>
-  
-  <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
-    <h2 style="font-size: 1.8em; color: #004080; margin-bottom: 15px;">Research Interests</h2>
-    <ul style="list-style-type: none; padding: 0; font-size: 1.2em; color: #555; line-height: 1.8;">
-      <li>🔬 <strong>Natural Language Processing</strong> for Genomic and Biomedical Data</li>
-      <li>💡 <strong>Machine Learning</strong> for Clinical Health and Computational Biology</li>
-      <li>📊 <strong>Deep Learning</strong> for Biomedical Imaging and Disease Diagnostics</li>
-      <li>🌐 <strong>Graph Neural Networks</strong> for Biological Networks and Interactions</li>
-      <li>🧠 <strong>Development and Fine‑tuning of Foundation Models</strong> for Multi‑modal Biomedical Applications</li>
-    </ul>
-  </div>
-  
-  <!-- Tabs -->
-  <div class="tabs">
-    <div class="tab active" onclick="showTab('journals')">Journals</div>
-    <div class="tab" onclick="showTab('conferences')">Conferences</div>
-    <div class="tab" onclick="showTab('preprints')">Preprints</div>
-  </div>
+  <div class="container">
 
-  <!-- Tab Content -->
-  <div id="journals" class="tab-content active">
-    <h2>Journal Publications</h2>
-    <table style="width:100%;border-spacing:0px;">
-      {% for post in site.posts %}
-      {% if post.categories contains 'journal' %}
-      <tr>
-        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-          <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-        </td>
-        <td style="padding:2.5%;width:75%;vertical-align:middle">
-          <h3>{{ post.title }}</h3>
-          <br>
-          {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
-          <br>
-          <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-          <br>
-          {% if post.arxiv != "N/A" %}
-          <a href="{{ post.arxiv }}">arxiv</a> /
-          {% endif %}
-          {% if post.doi != "N/A" %}
-          <a href="{{ post.doi }}">doi</a> /
-          {% endif %}
-          {% if post.code != "N/A" %}
-          <a href="{{ post.code }}">code</a> /
-          {% endif %}
-          <br>
-          <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
-          <div class="description">
-            {{ post.excerpt }}
-          </div>
-        </td>
-      </tr>
-      {% endif %}
-      {% endfor %}
-    </table>
-  </div>
+    <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px; margin-bottom: 20px;">
+      <h1 style="font-size: 2.5em; color: #004080; margin-bottom: 10px;"><strong>Md Toki Tahmid</strong></h1>
+      <p style="font-size: 1.2em; color: #555; line-height: 1.6;">
+        Welcome! I am a recent graduate from the <a href="https://www.buet.ac.bd/web/#/" style="color: #007BFF; text-decoration: none;"><strong>Department of Computer Science and Engineering</strong></a> at the <strong>Bangladesh University of Engineering and Technology (BUET)</strong>.
+        My passion lies in leveraging computational techniques to address challenges in <strong>biomedical informatics</strong>, <strong>clinical health</strong>, <strong>precision medicine</strong>, and <strong>computational biology</strong>.
+      </p>
+    </div>
+    
+    <!-- Profile Photo -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <img style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #004080;" alt="profile photo" src="../images/Md_Toki_Tahmid_Photo.jpg">
+    </div>
+    
+    <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+      <h2 style="font-size: 1.8em; color: #004080; margin-bottom: 15px;">Research Interests</h2>
+      <ul style="list-style-type: none; padding: 0; font-size: 1.2em; color: #555; line-height: 1.8;">
+        <li>🔬 <strong>Natural Language Processing</strong> for Genomic and Biomedical Data</li>
+        <li>💡 <strong>Machine Learning</strong> for Clinical Health and Computational Biology</li>
+        <li>📊 <strong>Deep Learning</strong> for Biomedical Imaging and Disease Diagnostics</li>
+        <li>🌐 <strong>Graph Neural Networks</strong> for Biological Networks and Interactions</li>
+        <li>🧠 <strong>Development and Fine‑tuning of Foundation Models</strong> for Multi‑modal Biomedical Applications</li>
+      </ul>
+    </div>
+    
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('journals')">Journals</div>
+      <div class="tab" onclick="showTab('conferences')">Conferences</div>
+      <div class="tab" onclick="showTab('preprints')">Preprints</div>
+    </div>
 
-  <div id="conferences" class="tab-content">
-    <h2>Conference Publications</h2>
-    <table style="width:100%;border-spacing:0px;">
-      {% for post in site.posts %}
-      {% if post.categories contains 'conference' %}
-      <tr>
-        <!-- Conference content here -->
-        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-          <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-        </td>
-        <td style="padding:2.5%;width:75%;vertical-align:middle">
-          <h3>{{ post.title }}</h3>
-          <br>
-          {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
-          <br>
-          <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-          <br>
-          {% if post.arxiv != "N/A" %}
-          <a href="{{ post.arxiv }}">arxiv</a> /
-          {% endif %}
-          {% if post.doi != "N/A" %}
-          <a href="{{ post.doi }}">doi</a> /
-          {% endif %}
-          {% if post.code != "N/A" %}
-          <a href="{{ post.code }}">code</a> /
-          {% endif %}
-          <br>
-          <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
-          <div class="description">
-            {{ post.excerpt }}
-          </div>
-        </td>
-      </tr>
-      {% endif %}
-      {% endfor %}
-    </table>
-  </div>
+    <!-- Tab Content -->
+    <div id="journals" class="tab-content active">
+      <h2>Journal Publications</h2>
+      <table style="width:100%;border-spacing:0px;">
+        {% for post in site.posts %}
+        {% if post.categories contains 'journal' %}
+        <tr>
+          <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+            <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+          </td>
+          <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <h3>{{ post.title }}</h3>
+            <br>
+            {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
+            <br>
+            <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+            <br>
+            {% if post.arxiv != "N/A" %}
+            <a href="{{ post.arxiv }}">arxiv</a> /
+            {% endif %}
+            {% if post.doi != "N/A" %}
+            <a href="{{ post.doi }}">doi</a> /
+            {% endif %}
+            {% if post.code != "N/A" %}
+            <a href="{{ post.code }}">code</a> /
+            {% endif %}
+            <br>
+            <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
+            <div class="description">
+              {{ post.excerpt }}
+            </div>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </table>
+    </div>
 
-  <div id="preprints" class="tab-content">
-    <h2>Preprints</h2>
-    <table style="width:100%;border-spacing:0px;">
-      {% for post in site.posts %}
-      {% if post.categories contains 'preprints' %}
-      <tr>
-        <!-- Preprint content here -->
-        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-          <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-        </td>
-        <td style="padding:2.5%;width:75%;vertical-align:middle">
-          <h3>{{ post.title }}</h3>
-          <br>
-          {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
-          <br>
-          <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-          <br>
-          {% if post.arxiv != "N/A" %}
-          <a href="{{ post.arxiv }}">arxiv</a> /
-          {% endif %}
-          {% if post.doi != "N/A" %}
-          <a href="{{ post.doi }}">doi</a> /
-          {% endif %}
-          {% if post.code != "N/A" %}
-          <a href="{{ post.code }}">code</a> /
-          {% endif %}
-          <br>
-          <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
-          <div class="description">
-            {{ post.excerpt }}
-          </div>
-        </td>
-      </tr>
-      {% endif %}
-      {% endfor %}
-    </table>
+    <div id="conferences" class="tab-content">
+      <h2>Conference Publications</h2>
+      <table style="width:100%;border-spacing:0px;">
+        {% for post in site.posts %}
+        {% if post.categories contains 'conference' %}
+        <tr>
+          <!-- Conference content here -->
+          <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+            <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+          </td>
+          <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <h3>{{ post.title }}</h3>
+            <br>
+            {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
+            <br>
+            <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+            <br>
+            {% if post.arxiv != "N/A" %}
+            <a href="{{ post.arxiv }}">arxiv</a> /
+            {% endif %}
+            {% if post.doi != "N/A" %}
+            <a href="{{ post.doi }}">doi</a> /
+            {% endif %}
+            {% if post.code != "N/A" %}
+            <a href="{{ post.code }}">code</a> /
+            {% endif %}
+            <br>
+            <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
+            <div class="description">
+              {{ post.excerpt }}
+            </div>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </table>
+    </div>
+
+    <div id="preprints" class="tab-content">
+      <h2>Preprints</h2>
+      <table style="width:100%;border-spacing:0px;">
+        {% for post in site.posts %}
+        {% if post.categories contains 'preprints' %}
+        <tr>
+          <!-- Preprint content here -->
+          <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+            <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+          </td>
+          <td style="padding:2.5%;width:75%;vertical-align:middle">
+            <h3>{{ post.title }}</h3>
+            <br>
+            {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
+            <br>
+            <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+            <br>
+            {% if post.arxiv != "N/A" %}
+            <a href="{{ post.arxiv }}">arxiv</a> /
+            {% endif %}
+            {% if post.doi != "N/A" %}
+            <a href="{{ post.doi }}">doi</a> /
+            {% endif %}
+            {% if post.code != "N/A" %}
+            <a href="{{ post.code }}">code</a> /
+            {% endif %}
+            <br>
+            <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
+            <div class="description">
+              {{ post.excerpt }}
+            </div>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </table>
+    </div>
   </div>
 
   <script>
