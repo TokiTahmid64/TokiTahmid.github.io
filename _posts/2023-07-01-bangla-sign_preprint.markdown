@@ -2,7 +2,7 @@
 layout: post
 title:  "Connecting the Dots: Leveraging Spatio-Temporal Graph Neural Networks for Accurate Bangla Sign Language Recognition"
 date:   2023/07/01
-image: /images/bangla-sign.jpg
+image: ../images/p_dot.png
 categories: preprints
 authors: "Haz Sameen Shahgir, Khondker Salman Sayeed, Md Toki Tahmid, Tanjeem Azwad Zaman, Md Zarif Ul Alam"
 venue: "arXiv"

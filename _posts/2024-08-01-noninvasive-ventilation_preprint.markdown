@@ -2,7 +2,7 @@
 layout: post
 title:  "Advancing Noninvasive Mechanical Ventilation: Simulating Techniques for Improved Respiratory Care"
 date:   2024/11/01
-image: /images/noninvasive-ventilation.jpg
+image: ../images/p_lung.png
 categories: preprints
 authors: "Md Toki Tahmid, Mrinmoy Nandi Bappa"
 venue: "bioRxiv"
