@@ -19,14 +19,28 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <style>
+    h3 {
+      color: #004080; /* Deep blue color */
+    }
+
     .description {
       display: none;
+      margin-top: 10px;
     }
 
     .toggle-button {
       cursor: pointer;
-      color: blue;
-      text-decoration: underline;
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .toggle-button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -66,20 +80,20 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{ post.title }}</h3>
               <br>
-              <strong>{{ post.authors | replace: 'Md Toki Tahmid', '<strong>Md Toki Tahmid</strong>' }}</strong>
+              <strong>{{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}</strong>
               <br>
               <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
               <br>
-              {% if post.arxiv %}
+              {% if post.arxiv != "N/A" %}
               <a href="{{ post.arxiv }}">arxiv</a> /
               {% endif %}
-              {% if post.doi %}
+              {% if post.doi != "N/A" %}
               <a href="{{ post.doi }}">doi</a> /
               {% endif %}
-              {% if post.code %}
+              {% if post.code != "N/A" %}
               <a href="{{ post.code }}">code</a> /
               {% endif %}
-              <p class="toggle-button" onclick="toggleDescription(this)">Show Description</p>
+              <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
               <div class="description">
                 {{ post.excerpt }}
               </div>
@@ -108,20 +122,20 @@
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{ post.title }}</h3>
               <br>
-              <strong>{{ post.authors | replace: 'Md Toki Tahmid', '<strong>Md Toki Tahmid</strong>' }}</strong>
+              <strong>{{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}</strong>
               <br>
               <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
               <br>
-              {% if post.arxiv %}
+              {% if post.arxiv != "N/A" %}
               <a href="{{ post.arxiv }}">arxiv</a> /
               {% endif %}
-              {% if post.doi %}
+              {% if post.doi != "N/A" %}
               <a href="{{ post.doi }}">doi</a> /
               {% endif %}
-              {% if post.code %}
+              {% if post.code != "N/A" %}
               <a href="{{ post.code }}">code</a> /
               {% endif %}
-              <p class="toggle-button" onclick="toggleDescription(this)">Show Description</p>
+              <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
               <div class="description">
                 {{ post.excerpt }}
               </div>
