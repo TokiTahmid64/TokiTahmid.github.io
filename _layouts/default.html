@@ -19,6 +19,50 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: #007BFF;
+      border: 1px solid #e0e0e0;
+      border-bottom: none;
+      background-color: #f9f9f9;
+      margin: 0 5px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .tab:hover {
+      background-color: #e0e0e0;
+    }
+
+    .tab.active {
+      background-color: #ffffff;
+      color: #004080;
+      border-bottom: 2px solid #ffffff;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     h3 {
       color: #004080; /* Deep blue color */
     }
@@ -46,156 +90,99 @@
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
-              <h1><strong>Md Toki Tahmid</strong></h1>
-              <p>Hi, I am Toki. I recently graduated from <a href="https://www.buet.ac.bd/web/#/">Bangladesh University of Engineering and Technology</a>.</p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/circle_bw_crop.jpg">
-            </td>
-          </tr>
-        </table>
+  <div style="text-align: center;">
+    <h1><strong>Md Toki Tahmid</strong></h1>
+    <p>Hi, I am Toki. I recently graduated from <a href="https://www.buet.ac.bd/web/#/">Bangladesh University of Engineering and Technology</a>.</p>
+  </div>
 
-        <!-- Journals Section -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Journal Publications</h2>
-            </td>
-          </tr>
-        </table>
+  <!-- Profile Photo -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img style="width:150px; height:150px; border-radius:50%;" alt="profile photo" src="images/circle_bw_crop.jpg">
+  </div>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          {% for post in site.posts %}
-          {% if post.categories contains 'journal' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{ post.title }}</h3>
-              <br>
-              {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
-              <br>
-              <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% if post.arxiv != "N/A" %}
-              <a href="{{ post.arxiv }}">arxiv</a> /
-              {% endif %}
-              {% if post.doi != "N/A" %}
-              <a href="{{ post.doi }}">doi</a> /
-              {% endif %}
-              {% if post.code != "N/A" %}
-              <a href="{{ post.code }}">code</a> /
-              {% endif %}
-              <br>
-              <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
-              <div class="description">
-                {{ post.excerpt }}
-              </div>
-            </td>
-          </tr>
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('journals')">Journals</div>
+    <div class="tab" onclick="showTab('conferences')">Conferences</div>
+    <div class="tab" onclick="showTab('preprints')">Preprints</div>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="journals" class="tab-content active">
+    <h2>Journal Publications</h2>
+    <table style="width:100%;border-spacing:0px;">
+      {% for post in site.posts %}
+      {% if post.categories contains 'journal' %}
+      <tr>
+        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+          <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+        </td>
+        <td style="padding:2.5%;width:75%;vertical-align:middle">
+          <h3>{{ post.title }}</h3>
+          <br>
+          {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
+          <br>
+          <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+          <br>
+          {% if post.arxiv != "N/A" %}
+          <a href="{{ post.arxiv }}">arxiv</a> /
           {% endif %}
-          {% endfor %}
-        </table>
-
-        <!-- Conferences Section -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Conference Publications</h2>
-            </td>
-          </tr>
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          {% for post in site.posts %}
-          {% if post.categories contains 'conference' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{ post.title }}</h3>
-              <br>
-              {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
-              <br>
-              <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% if post.arxiv != "N/A" %}
-              <a href="{{ post.arxiv }}">arxiv</a> /
-              {% endif %}
-              {% if post.doi != "N/A" %}
-              <a href="{{ post.doi }}">doi</a> /
-              {% endif %}
-              {% if post.code != "N/A" %}
-              <a href="{{ post.code }}">code</a> /
-              {% endif %}
-              <br>
-              <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
-              <div class="description">
-                {{ post.excerpt }}
-              </div>
-            </td>
-          </tr>
+          {% if post.doi != "N/A" %}
+          <a href="{{ post.doi }}">doi</a> /
           {% endif %}
-          {% endfor %}
-        </table>
-
-
-        <!-- Preprints Section -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2>Preprints</h2>
-            </td>
-          </tr>
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          {% for post in site.posts %}
-          {% if post.categories contains 'preprints' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{ post.image }}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{ post.title }}</h3>
-              <br>
-              {{ post.authors | replace: "Md Toki Tahmid", "<strong>Md Toki Tahmid</strong>" }}
-              <br>
-              <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
-              <br>
-              {% if post.arxiv != "N/A" %}
-              <a href="{{ post.arxiv }}">arxiv</a> /
-              {% endif %}
-              {% if post.doi != "N/A" %}
-              <a href="{{ post.doi }}">doi</a> /
-              {% endif %}
-              {% if post.code != "N/A" %}
-              <a href="{{ post.code }}">code</a> /
-              {% endif %}
-              <br>
-              <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
-              <div class="description">
-                {{ post.excerpt }}
-              </div>
-            </td>
-          </tr>
+          {% if post.code != "N/A" %}
+          <a href="{{ post.code }}">code</a> /
           {% endif %}
-          {% endfor %}
-        </table>
+          <br>
+          <button class="toggle-button" onclick="toggleDescription(this)">Show Description</button>
+          <div class="description">
+            {{ post.excerpt }}
+          </div>
+        </td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </table>
+  </div>
 
-      </td>
-    </tr>
-  </table>
+  <div id="conferences" class="tab-content">
+    <h2>Conference Publications</h2>
+    <table style="width:100%;border-spacing:0px;">
+      {% for post in site.posts %}
+      {% if post.categories contains 'conference' %}
+      <tr>
+        <!-- Conference content here -->
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </table>
+  </div>
+
+  <div id="preprints" class="tab-content">
+    <h2>Preprints</h2>
+    <table style="width:100%;border-spacing:0px;">
+      {% for post in site.posts %}
+      {% if post.categories contains 'preprints' %}
+      <tr>
+        <!-- Preprint content here -->
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </table>
+  </div>
 
   <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+      
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+
     function toggleDescription(element) {
       const description = element.nextElementSibling;
       if (description.style.display === "none" || description.style.display === "") {
