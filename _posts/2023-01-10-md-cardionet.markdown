@@ -2,7 +2,7 @@
 layout: post
 title:  "MD-CardioNet: A Multi-Dimensional Deep Neural Network for Cardiovascular Disease Diagnosis from Electrocardiogram"
 date:   2023/01/10
-image: /images/md-cardionet.jpg
+image: ../images/J_2.png
 categories: journal
 authors: "Md Toki Tahmid, Muhammad Ehsanul Kader, Tanvir Mahmud, Shaikh Anowarul Fattah"
 venue: "IEEE Journal of Biomedical and Health Informatics"

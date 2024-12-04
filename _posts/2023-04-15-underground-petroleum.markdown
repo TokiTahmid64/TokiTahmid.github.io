@@ -2,7 +2,7 @@
 layout: post
 title:  "A Ubiquitous Method for Predicting Underground Petroleum Deposits Based on Satellite Data"
 date:   2023/04/15
-image: /images/underground-petroleum.jpg
+image: ../images/J_1.png
 categories: journal
 authors: "Sarfaraz Newaz, Md Toki Tahmid, Nadia Al-Aboody, ABM Alim Al Islam"
 venue: "Nature Scientific Reports"
