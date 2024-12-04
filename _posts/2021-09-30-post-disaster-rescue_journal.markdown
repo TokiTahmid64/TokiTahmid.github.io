@@ -3,7 +3,7 @@ layout: post
 title:  "Escalating Post-Disaster Rescue Missions Through Ad-Hoc Victim Localization Exploiting Wi-Fi Networks"
 date:   2021/09/30
 image: /images/post-disaster-rescue.jpg
-categories: journal
+categories: research
 authors: "Khondoker Nazmoon Nabi, Md Toki Tahmid, Abdur Rafi, Md. Ehsanul Kader, Md. Asif Haider"
 venue: "Heliyon"
 arxiv: N/A

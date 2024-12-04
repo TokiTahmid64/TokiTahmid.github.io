@@ -3,7 +3,7 @@ layout: post
 title:  "Artificial Intelligence Based Cybersecurity: Two-Step Suitability Test"
 date:   2021/07/12
 image: /images/ai-cybersecurity.jpg
-categories: conference
+categories: research
 authors: "Sajjad Waheed Shah Md Istiaque, Md Toki Tahmid, Asif Iqbal Khan, Zaber Al Hassan"
 venue: "IEEE International Conference on Service Operation and Logistics, and Informatics, SOLI, 2021"
 arxiv: N/A
