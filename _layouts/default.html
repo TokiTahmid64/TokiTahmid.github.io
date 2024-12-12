@@ -23,6 +23,26 @@
       font-family: 'Lato', sans-serif;
     }
 
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      background-color: #004080;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1em;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
     .tabs {
       display: flex;
       justify-content: center;
@@ -99,6 +119,14 @@
 </head>
 
 <body>
+  <!-- Top Bar for Links -->
+  <div class="top-bar">
+    <a href="/path/to/cv.pdf" target="_blank">📄 CV</a>
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">💼 LinkedIn</a>
+    <a href="https://github.com/yourprofile" target="_blank">💻 GitHub</a>
+    <a href="mailto:your.email@example.com">✉️ Email</a>
+  </div>
+
   <div class="container">
 
     <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px; margin-bottom: 20px;">
@@ -108,12 +136,12 @@
         My passion lies in leveraging computational techniques to address challenges in <strong>biomedical informatics</strong>, <strong>clinical health</strong>, <strong>precision medicine</strong>, and <strong>computational biology</strong>.
       </p>
     </div>
-    
+
     <!-- Profile Photo -->
     <div style="text-align: center; margin-bottom: 30px;">
       <img style="width: 150px; height: 150px; border-radius: 50%; border: 2px solid #004080;" alt="profile photo" src="../images/Md_Toki_Tahmid_Photo.jpg">
     </div>
-    
+
     <div style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
       <h2 style="font-size: 1.8em; color: #004080; margin-bottom: 15px;">Research Interests</h2>
       <ul style="list-style-type: none; padding: 0; font-size: 1.2em; color: #555; line-height: 1.8;">
@@ -124,7 +152,7 @@
         <li>🧠 <strong>Development and Fine‑tuning of Foundation Models</strong> for Multi‑modal Biomedical Applications</li>
       </ul>
     </div>
-    
+
     <!-- Tabs -->
     <div class="tabs">
       <div class="tab active" onclick="showTab('journals')">Journals</div>
@@ -251,7 +279,7 @@
     function showTab(tabId) {
       const tabs = document.querySelectorAll('.tab');
       const contents = document.querySelectorAll('.tab-content');
-      
+
       tabs.forEach(tab => tab.classList.remove('active'));
       contents.forEach(content => content.classList.remove('active'));
 
